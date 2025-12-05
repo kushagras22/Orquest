@@ -1,9 +1,11 @@
-"use client"
+import prisma from "@/lib/db";
 
-const Page = () => {
+const Page = async () => {
+  const users = await prisma.user.findMany();
+
   return (
-    <div>
-      Hello World
+    <div className="flex items-center justify-center">
+      {JSON.stringify(users)}
     </div>
   );
 }
