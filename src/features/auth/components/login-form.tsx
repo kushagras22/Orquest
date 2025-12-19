@@ -25,6 +25,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import {authClient} from "@/lib/auth-client";
+import Image from "next/image";
 
 const loginSchema = z.object({
     email: z.email("Please enter a valid email address"),
@@ -79,18 +80,20 @@ const LoginForm = () => {
                                 <div className="flex flex-col gap-4">
                                     <Button 
                                     variant="outline"
-                                    className="w-full hover:cursor-pointer"
+                                    className="w-full"
                                     type="button"
                                     disabled={isPending}
                                     >
+                                        <Image src="/logos/github.svg" alt="Github" width={20} height={20} />
                                         Continue with Github
                                     </Button>
                                     <Button 
                                     variant="outline"
-                                    className="w-full hover:cursor-pointer"
+                                    className="w-full"
                                     type="button"
                                     disabled={isPending}
                                     >
+                                        <Image src="/logos/google.svg" alt="Google" width={20} height={20} />
                                         Continue with Google
                                     </Button>
                                 </div>
@@ -104,6 +107,7 @@ const LoginForm = () => {
                                             <FormLabel>Email</FormLabel>
                                             <FormControl>
                                                 <Input 
+                                            
                                                 type="email"
                                                 placeholder="hello@example.com"
                                                 {...field}
@@ -133,7 +137,7 @@ const LoginForm = () => {
                                     />
                                     <Button 
                                     type="submit"
-                                    className="w-full hover:cursor=pointer"
+                                    className="w-full"
                                     disabled={isPending}
                                     >
                                         Login
