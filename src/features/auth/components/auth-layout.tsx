@@ -9,7 +9,8 @@ const AuthLayout = ({children} : {children : React.ReactNode}) => {
                     <Image src="/logos/logo.svg" alt="Orquest" width={30} height={30}/>
                     Orquest
                 </Link>
-                </div>
+                {children}
+            </div>
         </div>
     )
 }
